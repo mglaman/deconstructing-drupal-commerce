@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Drupal Commerce, Deconstructed</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/commerce.css" id="theme">
+		<link rel="stylesheet" href="https//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background-video="assets/CK2Install.mp4" data-background-video-loop></section>
+
+				<!-- Introduction, Bio -->
+				<section>
+					<section>
+						<h1 class="uppercase">Drupal Commerce</h1>
+						<h2 class="uppercase">Deconstructed</h2>
+						<p>All the pieces and how they work together!</p>
+					</section>
+					<section>
+						<h2>Matt Glaman</h2>
+						<h4 class="no-margin uppercase"><small>Developer @ Commerce Guys</small></h4>
+						<ul class="links-inline">
+							<li class="link"><a href="http://www.linkedin.com/in/mattglaman"><i class="fa fa-linkedin">&nbsp;</i><span class="helper-text">LinkedIn</span></a></li>
+							<li class="link"><a href="https://github.com/mglaman"><i class="fa fa-github">&nbsp;</i><span class="helper-text">GitHub</span></a></li>
+							<li class="link"><a href="https://drupal.org/u/mglaman"><i class="fa fa-drupal">&nbsp;</i><span class="helper-text">Drupal</span></a></li>
+							<li class="link"><a href="https://twitter.com/nmdmatt"><i class="fa fa-twitter">&nbsp;</i><span class="helper-text">Twitter</span></a></li>
+						</ul>
+						<p><small>Maintainer of Commerce Reports, Commerce Deploy, MojoCart<br />
+							Co-maintainer of Drupal Commerce, Commerce Kickstart</small></p>
+					</section>
+				</section>
+
+				<!-- What makes Drupal Commerce: Entity API, Views, Rules -->
+				<section>
+					<section>
+						<h2>What makes Drupal Commerce?</h2>
+						<p>Drupal Commerce is about as <em>Drupal-y</em> as they come, harnessing the power of the major and most used modules in the Drupal ecosystem.</p>
+					</section>
+					<section>
+						<h2>Entity API</h2>
+						<p>Drupal Commerce uses the Entity API to the fullest, utilizing five different entities in total.</p>
+						<ul class="small">
+							<li>Line items</li>
+							<li>Products</li>
+							<li>Order</li>
+							<li>Customer profiles</li>
+							<li>Payment transactions</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Views</h2>
+						<p>No custom code for displaying entities, everything is powered by Views.</p>
+						<ul class="small">
+							<li>Administration lists for products, orders, and customer profiles</li>
+							<li>Listing payment transactions on orders</li>
+							<li>Order overview and cart items</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Rules</h2>
+						<p>Drupal hooks with a user interface. Setup conditions which react to events and perform specific actions. Drupal Commerce harnesses much of its functionality through Rules rather than standard hook implementations.</p>
+						<ul class="small">
+							<li>Product pricing uses Rules</li>
+							<li>Taxes are applied with Rules</li>
+							<li>Payment gateways are Rules actions!</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Fields</h2>
+						<p>Last, but not least, Entity integration could not be completed without Field API.</p>
+						<ul class="small">
+							<li>Prices handled through Commerce Price field.</li>
+							<li>Line items through a Line Item Reference field</li>
+							<li>Product reference fields</li>
+							<li>Customer profile reference fields</li>
+						</ul>
+					</section>
+				</section>
+				<!-- What IS Drupal Commerce -->
+				<section>
+					<section>
+						<h2 class="uppercase">Components of Commerce</h2>
+						<p>Drupal Commerce isn't just <em>Drupal-y</em> because it utilizes other contributed projects, but because it is composed of <strong>ELEVEN</strong> subprojects itself.</p>
+						<hr />
+						<ul class="small list-inline uppercase bold">
+							<li>Cart</li>
+							<li>Checkout</li>
+							<li>Customer</li>
+							<li>Line item</li>
+							<li>Order</li>
+							<li>Payment</li>
+							<li>Price</li>
+							<li>Product</li>
+							<li>Product pricing</li>
+							<li>Product reference</li>
+							<li>Tax</li>
+						</ul>
+					</section>
+					<section>
+						<h1>LOLWUT? SRSLY?</h1>
+						<img src="images/lolwut.gif" alt="lolwut" width="750" />
+					</section>
+					<section>
+						<h1 class="uppercase">Seriously.</h1>
+						<h2><small>But it is a good thing.</small></h2>
+						<p>Decoupled design allows for complex implementation and ultimate flexibility.</p>
+						<a data-flickr-embed="true" href="https://www.flickr.com/photos/otterman/4471720421" title="blue Lego wallpaper 1680x1050"><img src="https://farm5.staticflickr.com/4025/4471720421_48e5f572cf.jpg" width="500" height="313" alt="blue Lego wallpaper 1680x1050"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+					</section>
+					<section>
+						<h1>PAUSE TIME</h1>
+						<p><strong>Before diving in:</strong> there is <a href="https://www.drupal.org/project/commerce_kickstart">Commerce Kickstart v2</a> that provides a demo store and an opinionated installation of a Drupal Commerce site.</p>
+						<p>&nbsp;</p>
+						<p><small>If you use Commerce Kickstart, please <em>do not</em> build your production site off of a demo install.<br /><small>Seriously. Please don't.</small></small></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Price</h2>
+						<ul>
+							<li>Commerce handles pricing as a field on entities: such as line items, products, and orders</li>
+							<li>Prices support a large array of currency formats.</li>
+							<li>Composed of multiple components which calculate total price</li>
+							<li>Stored in non-decimal format, formatted on display by field formatter</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Line items</h2>
+						<p class="small bold">In my opinion the most integral entity in the Commerce system.</p>
+						<ul>
+							<li>Think of line items as a bridge entity for relationships and data</li>
+							<li>Have a quantity attribute</li>
+							<li>There is a unit price field and calculated total price field</li>
+							<li>Relate to an order, expecting to be attached to one.</li>
+							<li>Utilized for shipping services, discounts, coupons, fees, and more.</li>
+							<li>An order is a collection of line items <em>(details soon.)</em></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Products &amp; Product reference</h2>
+						<p></p>
+					</section>
+					<section>
+						<h2>Orders &amp; Customer profiles</h2>
+						<p></p>
+					</section>
+					<section>
+						<h2>Carts</h2>
+						<p></p>
+					</section>
+					<section>
+						<h2>Product pricing</h2>
+						<p></p>
+					</section>
+					<section>
+						<h2>Taxes</h2>
+						<p></p>
+					</section>
+					<section>
+						<h2>Checkout</h2>
+						<p></p>
+					</section>
+					<section>
+						<h2>Payment</h2>
+						<p></p>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						<section data-markdown>
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						</section>
+						```
+					</script>
+				</section>
+
+				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Tiled Backgrounds</h2>
+						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Video Backgrounds</h2>
+							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+					</section>
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2>... and GIFs!</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+					</p>
+					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						You can override background transitions per-slide.
+					</p>
+					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Marvelous List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Fantastic Ordered List</h2>
+					<ol>
+						<li>One is smaller than...</li>
+						<li>Two is smaller than...</li>
+						<li>Three!</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Tabular Tables</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Value</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Apples</td>
+								<td>$1</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>Lemonade</td>
+								<td>$2</td>
+								<td>18</td>
+							</tr>
+							<tr>
+								<td>Bread</td>
+								<td>$3</td>
+								<td>2</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Speaker View</h2>
+					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<p>Press the <em>S</em> key to try it out.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
+
+				<section>
+					<h2>Global State</h2>
+					<p>
+						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the page background.
+					</p>
+				</section>
+
+				<section data-state="customevent">
+					<h2>State Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+					</p>
+				</section>
+
+				<section>
+					<h2>Much more</h2>
+					<ul>
+						<li>Right-to-left support</li>
+						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+					</ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="http://slides.com">Try the online editor</a> <br>
+						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
