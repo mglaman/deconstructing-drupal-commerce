@@ -1,0 +1,124 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+@mixin gradient-vertical($from, $to) {
+  background: $to;
+  background: -moz-linear-gradient(top,  $from 0%, $to 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+  background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+  background: -o-linear-gradient(top, $from 0%,$to 100%);
+  background: -ms-linear-gradient(top, $from 0%,$to 100%);
+  background: linear-gradient(to bottom, $from 0%,$to 100%);
+}
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #36a2f6;
+
+$mainColor: #fff;
+$headingColor: #fff;
+
+$mainFontSize: 38px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: 1px;
+$headingTextTransform: normal;
+$headingFontWeight: 600;
+$linkColor: #42affa;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-light-background {
+  &, h1, h2, h3, h4, h5, h6 {
+    color: #222;
+  }
+}
+
+/* Installation/Maintenance Page */
+html {
+  background: #256ba7 url("../images/installation-bg.png") repeat 0 0;
+
+  body {
+    @include gradient-vertical(#569ad4,#256ba7);
+
+    .slide {
+      background: transparent url("../images/installation-bg.png") repeat 0 0;
+    }
+  }
+}
+.reveal {
+  .links-inline {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      text-align: center;
+      .fa {
+        font-size: 70px;
+      }
+      .helper-text {
+        display: none;
+      }
+    }
+  }
+
+  ul.list-inline {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 1% 2%;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+  .no-margin {
+    margin: 0;
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .small {
+    font-size: 70%;
+  }
+  .center {
+    text-align: center;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .slide-solid-bg {
+    background: #256ba7 url("../images/installation-bg.png") repeat 0 0;
+  }
+  .reverse, .reverse p, .reverse h1, .reverse h2 {
+    background: white;
+    color: #424242;
+  }
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
