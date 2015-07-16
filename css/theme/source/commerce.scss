@@ -110,6 +110,13 @@ html {
   .bold {
     font-weight: bold;
   }
+  .slide-solid-bg {
+    background: #256ba7 url("../images/installation-bg.png") repeat 0 0;
+  }
+  .reverse, .reverse p, .reverse h1, .reverse h2 {
+    background: white;
+    color: #424242;
+  }
 }
 
 // Theme template ------------------------------

@@ -142,7 +142,7 @@
 					</section>
 					<section>
 						<h1>PAUSE TIME</h1>
-						<p><strong>Before diving in:</strong> there is <a href="https://www.drupal.org/project/commerce_kickstart">Commerce Kickstart v2</a> that provides a demo store and an opinionated installation of a Drupal Commerce site.</p>
+						<p><strong>Before diving in:</strong> there is <a href="https://www.drupal.org/project/commerce_kickstart">Commerce Kickstart</a> that provides a demo store and an opinionated installation of a Drupal Commerce site.</p>
 						<p>&nbsp;</p>
 						<p><small>If you use Commerce Kickstart, please <em>do not</em> build your production site off of a demo install.<br /><small>Seriously. Please don't.</small></small></p>
 					</section>
@@ -200,7 +200,7 @@
 							<li>Entity which contains line items</li>
 							<li>Order total is calculated through aggregation of computed line item totals</li>
 							<li>Owned by user, identified through uid or mail</li>
-							<li>Orders are defined by states and statuses</li>
+							<li>Have states: cancelled, pending, completed</li>
 							<li>Can be created through the admin UI</li>
 						</ul>
 					</section>
@@ -224,7 +224,12 @@
 					</section>
 					<section>
 						<h2>Checkout</h2>
-						<p></p>
+						<ul>
+							<li>User interface for users to "edit" their order</li>
+							<li>Populate customer profile information</li>
+							<li>Create a payment transaction (paid in full)</li>
+							<li>Provides "checkout" state for orders</li>
+						</ul>
 					</section>
 					<section>
 						<h2>Carts</h2>
@@ -233,12 +238,77 @@
 							<li>User interface for customers to create orders</li>
 							<li>Method for a customer to access checkout</li>
 							<li>Turns Product entity fields to purchasable attributes</li>
+							<li>User interface for creating an order</li>
+							<li>Provides "cart" state to continue pricing rules within orders</li>
 						</ul>
 					</section>
 					<section>
 						<h2>Taxes</h2>
-						<p></p>
+						<ul>
+							<li>Taxes are price components</li>
+							<li>Work in similar fashion to pricing rules</li>
+						</ul>
 					</section>
+					<section>
+						<h1 class="uppercase">We made it!</h1>
+						<p>
+							That was a lot. I mean <em>a lot</em>.
+						</p>
+						<p>
+							Luckily there are distributions to help you along the way.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1 class="uppercase">Drupal Commerce Distributions</h1>
+						<h4>Yes, there's more than one!</h4>
+					</section>
+					<section data-background="images/ck-main-v2-josh-large.jpg" class="slide-solid-bg">
+						<h2>Commerce Kickstart</h2>
+						<p class="small">
+							Commerce Kickstart provides a demo store installation complete with products, categories, blog, ad plaements, and more.
+						</p>
+						<blockquote class="small" cite="https://www.drupal.org/project/commerce_kickstart">
+							Who should use Commerce Kickstart? Anyone who wants to skip weeks of configuration to build a commerce site on the Drupal Commerce framework.
+						</blockquote>
+						<p class="small">
+							It's opinionated and a great way to get started on your first project.
+						</p>
+					</section>
+					<section data-background="images/white-pattern.jpg" class="slide-solid-bg">
+						<h2>Commerce Deploy</h2>
+						<blockquote cite="https://www.drupal.org/project/commerce_deploy" class="small">
+							Commerce Deploy aims to simplify Drupal Commerce development for site builders and developers. Get started faster and cut the cruft of dependency gathering. The ideology behind Commerce Deploy is to provide enhancements to Drupal Commerce development without getting in the way.
+						</blockquote>
+						<p class="small">
+							It is a decoupled base distibution composed of several projects - so you can take the whole thing or the parts you want for your own distributions.
+							<hr />
+							<ul class="small list-inline uppercase bold">
+								<li>Core</li>
+								<li>Backend</li>
+								<li>Checkout</li>
+								<li>Customer</li>
+								<li>Product</li>
+								<li>Promotions</li>
+								<li>Shipping</li>
+							</ul>
+							<hr />
+							For developers, by a developer.
+						</p>
+					</section>
+					<section data-background="#6a1b9a" class="reverse">
+						<h2>MojoCart</h2>
+						<p>
+							MojoCart brings together <a href="https://www.drupal.org/project/panopoly">Panopoly</a> and <a href="https://www.drupal.org/project/commerce_deploy">Commerce Deploy</a> to create a robust e-commerce distribution.
+						</p>
+						<p class="small">
+							Currently in development, MojoCart plans to harness the power of Apps and provide a robust site builder Drupal Commerce experience powered by Panels.
+						</p>
+					</section>
+				</section>
+				<section data-background="#ffffff" class="reverse">
+					<h1 class="uppercase">THE END</h1>
 				</section>
 			</div>
 

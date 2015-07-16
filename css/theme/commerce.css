@@ -52,6 +52,11 @@ html {
   text-align: center; }
 .reveal .bold {
   font-weight: bold; }
+.reveal .slide-solid-bg {
+  background: #256ba7 url("../images/installation-bg.png") repeat 0 0; }
+.reveal .reverse, .reveal .reverse p, .reveal .reverse h1, .reveal .reverse h2 {
+  background: white;
+  color: #424242; }
 
 /*********************************************
  * GLOBAL STYLES
