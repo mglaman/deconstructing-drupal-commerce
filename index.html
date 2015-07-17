@@ -73,13 +73,18 @@
 					<section>
 						<h2>Entity API</h2>
 						<p>Drupal Commerce uses the Entity API to the fullest, utilizing five different entities in total.</p>
-						<ul class="small">
+						<hr />
+						<ul class="small list-inline uppercase bold">
 							<li>Line items</li>
 							<li>Products</li>
 							<li>Order</li>
 							<li>Customer profiles</li>
 							<li>Payment transactions</li>
 						</ul>
+						<hr />
+						<p class="fragment small">
+						It extends core's entity API into a more unified structure, including <abbr title="Create, read, update, and delete.">CRUD</abbr> operations. Entities in Drupal are a way to handle data and utilize the Field API (simply put.)
+						</p>
 					</section>
 					<section>
 						<h2>Views</h2>
@@ -104,9 +109,14 @@
 						<p>Last, but not least, Entity integration could not be completed without Field API.</p>
 						<ul class="small">
 							<li>Prices handled through Commerce Price field.</li>
-							<li>Line items through a Line Item Reference field</li>
-							<li>Product reference fields</li>
-							<li>Customer profile reference fields</li>
+							<li>
+								Reference fields to define relationships
+								<ul>
+									<li>Line Item reference fields</li>
+									<li>Product reference fields</li>
+									<li>Customer profile reference fields</li>
+								</ul>
+							</li>
 						</ul>
 					</section>
 				</section>
@@ -129,6 +139,7 @@
 							<li>Product reference</li>
 							<li>Tax</li>
 						</ul>
+						<hr />
 					</section>
 					<section>
 						<h1>LOLWUT? SRSLY?</h1>
@@ -144,7 +155,7 @@
 						<h1>PAUSE TIME</h1>
 						<p><strong>Before diving in:</strong> there is <a href="https://www.drupal.org/project/commerce_kickstart">Commerce Kickstart</a> that provides a demo store and an opinionated installation of a Drupal Commerce site.</p>
 						<p>&nbsp;</p>
-						<p><small>If you use Commerce Kickstart, please <em>do not</em> build your production site off of a demo install.<br /><small>Seriously. Please don't.</small></small></p>
+						<p><small>There are two installation options: demo, or no demo. The demo is great for learning Drupal Commerce and having a best-practices example. However, if you are going to build a Drupal Commerce site, use the no demo install</small></p>
 					</section>
 				</section>
 
@@ -173,6 +184,7 @@
 					<section>
 						<h2>Product</h2>
 						<ul>
+							<li>Products must have a unique SKU</li>
 							<li>The product entity represents a variant of an item for sale</li>
 							<li>Example: you have a Medium, Blue, T-Shirt and a Large, Blue, T-Shirt.</li>
 							<li>Fields on the product act as attributes (size, color) with Cart module</li>
@@ -238,7 +250,6 @@
 							<li>User interface for customers to create orders</li>
 							<li>Method for a customer to access checkout</li>
 							<li>Turns Product entity fields to purchasable attributes</li>
-							<li>User interface for creating an order</li>
 							<li>Provides "cart" state to continue pricing rules within orders</li>
 						</ul>
 					</section>
@@ -254,20 +265,28 @@
 						<p>
 							That was a lot. I mean <em>a lot</em>.
 						</p>
-						<p>
-							Luckily there are distributions to help you along the way.
-						</p>
+					</section>
+					<section>
+						<h3>Let's do a quick recap</h3>
+						<ul style="font-size:90%;">
+							<li class="fragment">Product displays are <em>nodes</em> that have a product reference field.</li>
+							<li class="fragment">A <em>variant</em> is a product entity that belongs to a product display</li>
+							<li class="fragment"><em>Product attributes</em> are exposed product fields that users can choose from via "Add to Cart"</li>
+							<li class="fragment">Think of <em>Checkout</em> as a customer's interface to edit their order</li>
+							<li class="fragment">Think of <em>Cart</em> as a customer's interface to create an order</li>
+						</ul>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h1 class="uppercase">Drupal Commerce Distributions</h1>
-						<h4>Yes, there's more than one!</h4>
+						<h3>Luckily there are distributions to help you along the way.</h3>
+						<h4><small>Yes, there's more than one!</small></h4>
 					</section>
 					<section data-background="images/ck-main-v2-josh-large.jpg" class="slide-solid-bg">
 						<h2>Commerce Kickstart</h2>
 						<p class="small">
-							Commerce Kickstart provides a demo store installation complete with products, categories, blog, ad plaements, and more.
+							Commerce Kickstart provides a demo store installation complete with products, categories, blog, ad placements, and more.
 						</p>
 						<blockquote class="small" cite="https://www.drupal.org/project/commerce_kickstart">
 							Who should use Commerce Kickstart? Anyone who wants to skip weeks of configuration to build a commerce site on the Drupal Commerce framework.
@@ -307,8 +326,11 @@
 						</p>
 					</section>
 				</section>
-				<section data-background="#ffffff" class="reverse">
+				<section data-background="#ffffff" class="reverse" style="text-align: left">
 					<h1 class="uppercase">THE END</h1>
+					<p>
+						<a href="https://github.com/mglaman/deconstructing-drupal-commerce">github/mglaman/deconstructing-drupal-commerce</a>
+					</p>
 				</section>
 			</div>
 
